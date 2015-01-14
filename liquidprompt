@@ -514,7 +514,7 @@ _lp_connection()
 # else display the host without color
 # The connection is not expected to change from inside the shell, so we
 # build this just once
-LP_HOST=""
+LP_HOST=$HOSTNAME
 [[ -r /etc/debian_chroot ]] && LP_HOST="($(< /etc/debian_chroot))"
 
 # If we are connected with a X11 support
