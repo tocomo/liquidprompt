@@ -270,6 +270,7 @@ _lp_source_config()
     LP_PATH_KEEP=${LP_PATH_KEEP:-2}
     LP_PATH_DEFAULT="${LP_PATH_DEFAULT:-$_LP_PWD_SYMBOL}"
     LP_USER_ALWAYS=${LP_USER_ALWAYS:-1}
+    LP_HOSTNAME_ALWAYS=${LP_HOSTNAME_ALWAYS:-1}
     LP_PERCENTS_ALWAYS=${LP_PERCENTS_ALWAYS:-1}
     LP_PS1=${LP_PS1:-""}
     LP_PS1_PREFIX=${LP_PS1_PREFIX:-""}
@@ -561,9 +562,6 @@ lcl)
     if [[ "${LP_HOSTNAME_ALWAYS}" -eq "0" ]]; then
         # FIXME do we want to display the chroot if local?
         LP_HOST="" # no hostname if local
-    else
-        LP_HOST="${LP_HOST}${LP_COLOR_HOST}${_LP_HOST_SYMBOL}${NO_COL}"
-    fi
     ;;
 ssh)
     # If we want a different color for each host
