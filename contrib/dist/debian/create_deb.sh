@@ -4,15 +4,15 @@ echo "Creating Debian's package..."
 nano ./liquidprompt/DEBIAN/control
 
 echo "Copying files..."
-cp ../../liquidprompt ./liquidprompt/usr/bin/liquidprompt
+cp ../../profile.d.sh ./liquidprompt/etc/profile.d/liquidprompt.sh
+cp ../../liquidprompt ./liquidprompt/etc/liquidprompt
 cp ../../liquidpromptrc-dist ./liquidprompt/etc/liquidpromptrc
-chmod a+x ./liquidprompt/usr/bin/liquidprompt
 
 echo "Building liquidprompt.deb..."
 dpkg-deb -b liquidprompt
 
 echo "Deleting files..."
-rm -f ./liquidprompt/etc/*
-rm -f ./liquidprompt/usr/bin/*
+rm -f ./liquidprompt/etc/liquidprompt
+rm -f ./liquidprompt/etc/profile.d/liquidprompt.sh
 
 echo "Done !"
